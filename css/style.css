@@ -1,0 +1,106 @@
+body{
+    background-color: white;
+    &.dark-mode{
+        background-color: #212529;
+        color: white;
+    }
+}
+
+nav.sidebar {
+    transition: .5s;
+    width: 70px;
+    height: 70px;
+    padding: 40px 0 40px 1%;
+    margin: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+/* Esconde o conteúdo por padrão */
+ul li.item-bar a .txt-link, ul li.item-bar a .icon, ul li.item-bar, a.active {
+    display: none;
+}
+
+/* Mostra o conteúdo quando nav.sidebar é focado */
+nav.sidebar:hover ul li.item-bar a .txt-link , nav.sidebar:hover ul li.item-bar a .icon, nav.sidebar:hover ul li.item-bar{
+    display: inline;
+}
+
+
+nav.sidebar:hover {
+    transition: .5s;
+    width: 300px;
+    height: 340px;
+    background-color: gainsboro;
+
+
+}
+.btn-expasion{
+    width: 100%;
+    padding-left: 5px;
+}
+.btn-expasion > i {
+    color: black;
+    font-size: 24px;
+    cursor: pointer;
+
+}
+ul {
+    transition: .2s;
+    padding: 2px;
+    height: 100%;
+    list-style-type: none;
+}
+ul li.item-bar{
+    transition: .2s;
+}
+a.item-bar:hover{
+    background-color: #212121;
+}
+a.active{
+    border-bottom: 2px solid black;
+}
+
+ul li.item-bar:hover{
+    background-color: black;
+    border-radius: 10px;
+}
+ul li.item-bar a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    line-height: 40px;
+}
+
+ul li.item-bar a:hover{
+    color: white;
+}
+
+ul li.item-bar a .txt-link {
+    margin-left: 20px;
+}
+
+ul li.item-bar a .icon {
+    font-size: 25px;
+}
+.btn-dark {
+    text-align: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 17px;
+    padding: 5px 0 20px 1%;
+}
+
+
+#calcular {
+      display: block;
+}
+#table {
+    display: none;
+}
+#about {
+    display: none;
+}

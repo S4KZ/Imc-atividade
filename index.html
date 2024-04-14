@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="sidebar shadow p-3 mb-5 bg-white rounded">
+        <div class="btn-expasion">
+            <i class="bi bi-list"></i>
+        </div>
+        <ul>
+            <li class="item-bar" onclick="selectMenu(1)">
+                <a href="#" class="item-bar active" id="home">
+                    <span class="icon"><i class="bi bi-house"></i></span>
+                    <span class="txt-link">Home</span>
+                </a>
+            </li>
+            <li class="item-bar" onclick="selectMenu(2)">
+                <a href="#" class="item-bar" id="tabela">
+                    <span class="icon"><i class="bi bi-table"></i></i></span>
+                    <span class="txt-link">Tabela</span>
+                </a>
+            </li>
+            <li class="item-bar" onclick="selectMenu(3)">
+                <a href="#" class="item-bar" id="sobre">
+                    <span class="icon"><i class="bi bi-file-earmark-text-fill"></i></span>
+                    <span class="txt-link">Sobre</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+        <div class="btn-dark">
+            <label for="switch">
+            <input type="checkbox" id="switch">
+            <span class="icon-dark"><i class="bi bi-cloud-moon-fill"></i></i></span>
+        </label> 
+        </div>
+
+    <div id="calcular">
+
+        <header>
+            <h1 class="display-3 text-center">CALCULAR</h1>
+        </header>
+    
+    <br>
+        <main class="container">
+            <div class="row">
+    
+                <div class="col-md-6 col-12">
+                    <div class="">
+                        <h2 class="display-5">Coloque seus dados</h2>
+                        <div class="py-3">
+                            <label for="">Nome</label>
+                            <input type="text" id="nome" placeholder="Digite seu nome" class="form-control">
+                        </div>
+                        <div class="py-3">
+                            <label for="">Sobrenome</label>
+                            <input type="text" id="sobrenome" placeholder="Digite seu sobrenome" class="form-control">
+                        </div>
+                        <div class="py-3">
+                            <label for="">Peso</label>
+                            <input type="number" id="peso" placeholder="Digite seu Peso" class="form-control">
+                        </div>
+                        <div class="py-3">
+                            <label for="">Altura</label>
+                            <input type="number" id="altura" placeholder="Digite seu Altura" class="form-control">
+                        </div>
+                      
+                        <div class="py-3">
+                            <label for="">Categoria</label>
+                            <select id="categoria" class="form-control">
+                                <option value="adulto">Adulto</option>
+                                <option value="infantil">Infantil</option>
+                            </select>
+                        </div>
+                        <div class="py-3 text-center">
+                            <button class="btn btn-outline-primary w-50" id="btn">Cadastrar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="">
+                        <h2>Dados cadastrados</h2>
+                    </div>
+                    <table class="table table-responsive">
+                        <tr>
+                                <td>Nome</td>
+                                <td>Altura</td>
+                                <td>Peso</td>
+                                <td>Imc</td>
+                                <td>Classificação</td>
+                        </tr>
+                        <tbody id="resultado">
+                    
+                        </tbody>
+                    </table>
+    
+                </div>
+    
+            </div>
+            <div class="container mt-5">
+                <h1 class="text-center">IMC - Dieta e Exercícios</h1>
+        
+                <!-- Seção Abaixo do Peso -->
+                <div id="Abaixo-peso" class="card mt-4">
+                    <div class="card-header">
+                        <h2>Abaixo do Peso</h2>
+                    </div>
+                    <div class="card-body">
+                        <h3>Dieta</h3>
+                        <p>Coma alimentos ricos em nutrientes, como frutas, vegetais, grãos integrais, proteínas magras e laticínios com baixo teor de gordura.</p>
+                        <h3>Exercícios</h3>
+                        <p>Faça exercícios de resistência, como levantamento de peso, para ajudar a construir massa muscular.</p>
+                    </div>
+                </div>
+        
+                <!-- Seção Peso Normal -->
+                <div id="Peso-normal" class="card mt-4">
+                    <div class="card-header">
+                        <h2>Peso Normal</h2>
+                    </div>
+                    <div class="card-body">
+                        <h3>Dieta</h3>
+                        <p>Mantenha uma dieta equilibrada e nutritiva para manter seu peso saudável.</p>
+                        <h3>Exercícios</h3>
+                        <p>Combine exercícios aeróbicos, como corrida ou ciclismo, com exercícios de força para manter um bom condicionamento físico.</p>
+                    </div>
+                </div>
+        
+                <!-- Seção Sobrepeso -->
+                <div id="Sobrepeso" class="card mt-4">
+                    <div class="card-header">
+                        <h2>Sobrepeso</h2>
+                    </div>
+                    <div class="card-body">
+                        <h3>Dieta</h3>
+                        <p>Reduza a ingestão de calorias e aumente a ingestão de alimentos ricos em nutrientes. Evite alimentos processados e bebidas açucaradas.</p>
+                        <h3>Exercícios</h3>
+                        <p>Faça pelo menos 150 minutos de atividade moderada ou 75 minutos de atividade intensa por semana.</p>
+                    </div>
+                </div>
+        
+                <!-- Seção Obesidade Grau 1 -->
+                <div id="Obesidade-grau-I" class="card mt-4">
+                    <div class="card-header">
+                        <h2>Obesidade Grau 1</h2>
+                    </div>
+                    <div class="card-body">
+                        <h3>Dieta</h3>
+                        <p>Consulte um nutricionista para obter um plano de refeições personalizado. Concentre-se em porções menores e alimentos ricos em nutrientes.</p>
+                        <h3>Exercícios</h3>
+                        <p>Comece devagar com atividades de baixo impacto, como caminhar ou nadar, e gradualmente aumente a intensidade à medida que sua condição física melhora.</p>
+                    </div>
+                </div>
+        
+                <!-- Seção Obesidade Grau 2 -->
+                <div id="Obesidade-grau-II" class="card mt-4">
+                    <div class="card-header">
+                        <h2>Obesidade Grau 2</h2>
+                    </div>
+                    <div class="card-body">
+                        <h3>Dieta</h3>
+                        <p>Consulte um nutricionista para obter um plano de refeições personalizado. Concentre-se em porções menores e alimentos ricos em nutrientes.</p>
+                        <h3>Exercícios</h3>
+                        <p>Comece devagar com atividades de baixo impacto, como caminhar ou nadar, e gradualmente aumente a intensidade à medida que sua condição física melhora.</p>
+                    </div>
+                </div>
+        
+                <!-- Seção Obesidade Grau 3 -->
+                <div id="Obesidade-grau-III" class="card mt-4">
+                    <div class="card-header">
+                        <h2>Obesidade Grau 3</h2>
+                    </div>
+                    <div class="card-body">
+                        <h3>Dieta</h3>
+                        <p>Consulte um nutricionista para obter um plano de refeições personalizado. Concentre-se em porções menores e alimentos ricos em nutrientes.</p>
+                        <h3>Exercícios</h3>
+                        <p>Comece devagar com atividades de baixo impacto, como caminhar ou nadar, e gradualmente aumente a intensidade à medida que sua condição física melhora.</p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+    
+    </div>
+
+    <div id="table">
+        <div class="container">
+            <h1 class="text-center mt-5">Tabela IMC</h1>
+            <table class="table table-striped mt-3">
+                <thead>
+                    <tr>
+                        <th scope="col">Classificação</th>
+                        <th scope="col">IMC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Abaixo do peso</td>
+                        <td>Menos do que 18,5</td>
+                    </tr>
+                    <tr>
+                        <td>Peso normal</td>
+                        <td>18,5 – 24,9</td>
+                    </tr>
+                    <tr>
+                        <td>Sobrepeso</td>
+                        <td>25 – 29,9</td>
+                    </tr>
+                    <tr>
+                        <td>Obesidade grau I</td>
+                        <td>30 – 34,9</td>
+                    </tr>
+                    <tr>
+                        <td>Obesidade grau II</td>
+                        <td>35 – 39,9</td>
+                    </tr>
+                    <tr>
+                        <td>Obesidade grau III</td>
+                        <td>40 ou mais</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="container">
+            <h1 class="text-center mt-5">Sobre IMC</h1>
+            <div class="jumbotron mt-3">
+                <p>
+                    O Índice de Massa Corporal (IMC) é uma medida usada para determinar se uma pessoa tem um peso saudável. É calculado dividindo o peso de uma pessoa (em quilogramas) pela altura (em metros) ao quadrado. O IMC pode ser usado para indicar se você está abaixo do peso, normal, sobrepeso ou obeso.
+                </p>
+                <p>
+                    O IMC é uma ferramenta útil porque fornece uma maneira rápida e fácil de avaliar se o seu peso está em uma faixa saudável. No entanto, é importante lembrar que o IMC é uma medida geral e não leva em consideração a composição corporal. Por exemplo, um atleta musculoso pode ter um IMC alto, mas não é considerado acima do peso porque a massa muscular pesa mais do que a gordura.
+                </p>
+                <p>
+                    Além disso, o IMC pode não ser uma medida precisa para todos. Por exemplo, em idosos, pode subestimar a gordura corporal e em crianças e adolescentes, que estão crescendo, o IMC pode mudar rapidamente e pode ser difícil interpretar.
+                </p>
+                <p>
+                    Apesar dessas limitações, o IMC continua sendo uma das ferramentas mais simples e eficazes disponíveis para avaliar o status de peso de uma pessoa. Se você está preocupado com o seu IMC ou o seu peso, é sempre uma boa ideia falar com um profissional de saúde, como um médico ou nutricionista.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+    <script src="js/app.js"></script>
+    <script src="js/dark.js"></script>
+    <script src="js/navbar.js"></script>
+</body>
+
+</html>
